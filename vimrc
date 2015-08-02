@@ -22,9 +22,18 @@ set incsearch
 set t_Co=256
 colorscheme summerfruit256
 
+" for powerline fonts (turns out none of these are necessary if you set the
+" terminal's font to a powerline font and tell it to antialias text)
+" set guifont=Inconsolata\ for\ Powerline
+" set encoding=utf-8
+" set fillchars+=stl:\ ,stlnc:\
+" set term=xterm-256color
+" set termencoding=utf-8
+
 " Vim-airline configuration
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " Bindings for tabbed editing
 noremap <C-l> :bnext<CR>
