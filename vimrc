@@ -1,4 +1,3 @@
-" This is a test
 " Pathogen setup
 execute pathogen#infect()
 
