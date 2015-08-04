@@ -40,8 +40,8 @@ noremap <C-l> :bnext<CR>
 noremap <C-h> :bprev<CR>
 noremap <C-x> :bd<CR>
 set hidden  " allows leaving a buffer even if it's modified
-imap <C-l> <ESC>:bnext<CR>i
-imap <C-h> <ESC>:bprev<CR>i
+imap <C-l> <ESC>:bnext<CR>
+imap <C-h> <ESC>:bprev<CR>
 
 " ignore certain file types when autocompleting?
 set wildignore+=*/.hg/*,*/.svn/*,*/.git/*,*.pyc,*.so
