@@ -13,6 +13,9 @@ set whichwrap=b,s,h,l,~,[,],<,>
 set hls
 nmap <space><space> :noh<CR>/<BS>
 
+" Shortcut key to replace occurrences of a word
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+
 " more search stuff
 set ignorecase
 set smartcase
