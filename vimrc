@@ -9,7 +9,7 @@ set nocompatible
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
 
-" backspace acts normally in insert mode
+" backspace acts normally in normal mode
 nnoremap <bs> X
 
 " Turn on search highlighting, but make <space><space> turn it off
@@ -40,7 +40,7 @@ colorscheme summerfruit256
 " Vim-airline configuration
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 " Bindings for tabbed editing
 noremap <C-l> :bnext<CR>
