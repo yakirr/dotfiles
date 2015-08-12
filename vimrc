@@ -9,6 +9,9 @@ set nocompatible
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
 
+" backspace acts normally in insert mode
+nnoremap <bs> X
+
 " Turn on search highlighting, but make <space><space> turn it off
 set hls
 nmap <space><space> :noh<CR>/<BS>
@@ -22,6 +25,7 @@ set smartcase
 set incsearch
 
 " background color
+" set term=builtin_xterm
 set t_Co=256
 colorscheme summerfruit256
 
@@ -36,7 +40,7 @@ colorscheme summerfruit256
 " Vim-airline configuration
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 " Bindings for tabbed editing
 noremap <C-l> :bnext<CR>
@@ -81,3 +85,6 @@ let python_highlight_all = 1
 " enable shortcut key for running a python script
 map <C-t> :w<CR>:!python %<CR>
 imap <C-t> <Esc>:w<CR>:!python %<CR>
+
+" remove line break and indentation
+nnoremap (( wd0X
