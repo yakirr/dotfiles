@@ -6,11 +6,16 @@ filetype plugin indent on
 " vi? This is VIMMMMMMMMMMMMMM
 set nocompatible
 
+" set a column boundary
+set colorcolumn=95
+
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
 
-" backspace acts normally in normal mode
+" backspace acts normally in normal mode and wraps across line breaks in
+" insert mode
 nnoremap <bs> X
+set backspace=indent,eol,start
 
 " Turn on search highlighting, but make <space><space> turn it off
 set hls
@@ -28,14 +33,6 @@ set incsearch
 " set term=builtin_xterm
 set t_Co=256
 colorscheme summerfruit256
-
-" for powerline fonts (turns out none of these are necessary if you set the
-" terminal's font to a powerline font and tell it to antialias text)
-" set guifont=Inconsolata\ for\ Powerline
-" set encoding=utf-8
-" set fillchars+=stl:\ ,stlnc:\
-" set term=xterm-256color
-" set termencoding=utf-8
 
 " Vim-airline configuration
 let g:airline#extensions#tabline#enabled = 1
@@ -57,6 +54,18 @@ set showcmd                 " Show incomplete normal mode commands as I type.
 set timeoutlen=300  ttimeoutlen=0
 
 """ for coding
+" turn on python code completion. To bring up the code completion window,
+" type <C-x><C-o> in insert mode. To bring up context completion
+" (language-agnostic), type <C-n>.
+set omnifunc=pythoncomplete#Complete
+" the line below makes it auto-insert only the longest common substring of
+" all the options rather than the complete first one.
+set completeopt+=longest
+" make it so that in insert mode enter accepts the highlighted suggestion and
+" then stays in insert mode
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+
+
 " enable syntax highlighting
 syntax enable
 
@@ -88,3 +97,4 @@ imap <C-t> <Esc>:w<CR>:!python %<CR>
 
 " remove line break and indentation
 nnoremap (( wd0X
+
