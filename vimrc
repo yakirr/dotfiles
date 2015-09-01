@@ -108,3 +108,11 @@ imap <C-t> <Esc>:w<CR>:!python %<CR>
 " remove line break and indentation
 nnoremap (( wd0X
 
+" code folding
+" to open/close a fold use za or zA to make it recursive
+" to open all folds (or just one level) use zR (or zr)
+" to close folds use zm or zM
+set foldmethod=indent
+set foldnestmax=2
+set foldcolumn=2
+
