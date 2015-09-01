@@ -113,6 +113,40 @@ nnoremap (( wd0X
 " to open all folds (or just one level) use zR (or zr)
 " to close folds use zm or zM
 set foldmethod=indent
-set foldnestmax=2
-set foldcolumn=2
+set foldnestmax=3
 
+" rainbow parentheses! make autocommands so they're always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+"""""""""""""""
+" find-replace configutation
+" put the results window on the bottom
+let g:ctrlsf_position = 'bottom'
+
+" shortcut keys for the find-replace in files plugin ctrlsf (Ctrl+Shift+F)
+" Input :CtrlSF in command line for you, just a handy shortcut.
+nmap     <leader>ff <Plug>CtrlSFPrompt
+
+" Input :CtrlSF foo in command line where foo is the current visual selected
+" word, waiting for further input.
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+
+" Like <Plug>CtrlSFVwordPath, but execute it immediately.
+vmap     <leader>fF <Plug>CtrlSFVwordExec
+
+" Input :CtrlSF foo in command line where foo is word under the cursor.
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+
+" same, but with last search pattern
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+
+" reopen the ctrl-sf window
+nnoremap <leader>fo :CtrlSFOpen<CR>
+
+" toggle the ctrl-sf window
+nnoremap <leader>ft :CtrlSFToggle<CR>
+inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+"""""""""""""
