@@ -14,6 +14,7 @@ the --recursive is so that submodules containing plugins are copied over as well
 mv dotfiles/* .vim/
 mv dotfiles/.git .vim/
 mv dotfiles/.gitmodules .vim/
+mv dotfiles/.gitignore .vim/
 rm -rf dotfiles
 ln -s ~/.vim/vimrc .vimrc
 ```
