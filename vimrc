@@ -181,3 +181,6 @@ nnoremap <leader>fo :CtrlSFOpen<CR>
 nnoremap <leader>ft :CtrlSFToggle<CR>
 inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 """""""""""""
+
+" snippet for python debugger
+imap <C-d> import pdb; pdb.set_trace()<Esc>
